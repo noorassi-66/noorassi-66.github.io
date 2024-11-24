@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>noorassi66</title>
+<link rel="icon" type="image/x-icon" href="images/noorassi66.jpg">
+<style>
+    .fullscreen-btn {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .fullscreen-btn:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameFrame = document.getElementById('game-frame');
+
+        fullscreenBtn.addEventListener('click', function() {
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.mozRequestFullScreen) { // Firefox
+                gameFrame.mozRequestFullScreen();
+            } else if (gameFrame.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) { // IE/Edge
+                gameFrame.msRequestFullscreen();
+            }
+        });
+    });
+</script>
+</head>
+<body bgColor="grey">
+<center><h1><font size="+2" face="Comic Sans MS">noorassi66</font></h1>
+</center>
+<center><h1><font size="+2" face="Comic Sans MS"><a href="index.html">Home</a> || <a
+href="#">About</a> || <a href="#">Gallery</a> || <a href="games.html">Games</a></font></center>
+<center>
+<div class="game-container">
+            <iframe id="game-frame" src="games/my-talking-zach.html" width="600" height="450" allowfullscreen></iframe>
+        </div>
+	      <button id="fullscreen-btn" class="fullscreen-btn">Fullscreen</button>
+
+</center>
+</body>
+</html>
